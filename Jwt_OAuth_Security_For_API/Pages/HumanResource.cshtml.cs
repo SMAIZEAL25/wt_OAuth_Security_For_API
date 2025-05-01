@@ -4,19 +4,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Jwt_OAuth_Security_For_API.Pages
 {
-    [Authorize]
-    public class IndexModel : PageModel
+    [Authorize(Policy = "MustBelongToHRDepartment")]
+    public class HumanResourceModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
         public void OnGet()
         {
-
         }
     }
 }

@@ -24,16 +24,17 @@ namespace Jwt_OAuth_Security_For_API.Pages.Account
                    
 
                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, ""),
-                        new Claim(ClaimTypes.Email,""),
-                      
+                     {
+                        new Claim(ClaimTypes.Name, "admin"),
+                        new Claim(ClaimTypes.Email,"admin@mysite.com"),
+                        new Claim("Department", "HR")                      
                     };
-                    var claimsIdentity = new ClaimsIdentity(claims, "MyCookiesAuth");
+
+                    var claimsIdentity = new ClaimsIdentity(claims, "MyCookieAuth");
                     var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                     // Sign in the user
-                    await HttpContext.SignInAsync( "MyCookiesAuth", claimsPrincipal);
-                    Response.Redirect("/Index");
+                    await HttpContext.SignInAsync( "MyCookieAuth", claimsPrincipal);
+                    return RedirectToPage("/Index");
                 }
                 return Page();
         }
