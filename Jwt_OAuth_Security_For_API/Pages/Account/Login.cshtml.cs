@@ -20,20 +20,29 @@ namespace Jwt_OAuth_Security_For_API.Pages.Account
             if (!ModelState.IsValid) return Page();
 
             if (Credential.UserName == "admin" && Credential.Password == "admin")
-                {
-                   
+            {
 
-                   var claims = new List<Claim>
+
+                var claims = new List<Claim>
                      {
                         new Claim(ClaimTypes.Name, "admin"),
                         new Claim(ClaimTypes.Email,"admin@mysite.com"),
-                        new Claim("Department", "HR")                      
+                        new Claim("Department", "HR"),
+                        new Claim("Admin", "true"),
+                        new Claim("Manager", "true"),
+                        new Claim("EmployementDate", "2025-01-03")
                     };
 
-                    var claimsIdentity = new ClaimsIdentity(claims, "MyCookieAuth");
-                    var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-                    // Sign in the user
-                    await HttpContext.SignInAsync( "MyCookieAuth", claimsPrincipal);
+                var claimsIdentity = new ClaimsIdentity(claims, "MyCookieAuth");
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                // Sign in the user
+
+                var authproperties = new AuthenticationProperties
+                {
+                    IsPersistent = Credential.RememberMe
+                };
+
+                    await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal, authproperties );
                     return RedirectToPage("/Index");
                 }
                 return Page();
@@ -48,5 +57,8 @@ namespace Jwt_OAuth_Security_For_API.Pages.Account
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; } = string.Empty;
+
+        [Display (Name = "RememberMe")]
+        public bool RememberMe { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Jwt_OAuth_Security_For_API.Pages.Account
 {
-    public class AccessDeniedpageModel : PageModel
+    public class AccessDeniedModel : PageModel
     {
         public void OnGet()
         {

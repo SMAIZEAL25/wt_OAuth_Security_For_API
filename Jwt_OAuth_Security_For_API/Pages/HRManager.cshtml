@@ -1,0 +1,18 @@
+﻿@page
+@model Jwt_OAuth_Security_For_API.Pages.HRManagerModel
+@{
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome to Human Resoucre Management </h1>
+    <br />
+    <ul>
+        @foreach (var item in Model.WeatherForeCastItems)
+        {
+            <li>@item.Date.ToLongDateString() - @item.Summary</li>
+        })
+    
+    </ul>
+
+
+
+</div>
