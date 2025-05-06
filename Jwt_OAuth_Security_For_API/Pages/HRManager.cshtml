@@ -5,13 +5,38 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to Human Resoucre Management </h1>
     <br />
-    <ul>
-        @foreach (var item in Model.WeatherForeCastItems)
-        {
-            <li>@item.Date.ToLongDateString() - @item.Summary</li>
-        })
+    <table class=" table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp</th>
+                <th>Temp</th>
+                <th>Summary</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model.WeatherForeCastItems)
+            {
+                <tr>
+                    <td>@item.Date.ToLongDateString()</td>
+                    <td>@item.TemperatureC</td>
+                    <td>@item.TemperatureF</td>
+                    <td>@item.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+        <ul>
+            @foreach (var item in Model.WeatherForeCastItems)
+            {
+                <li>@item.Date.ToLongDateString() - @item.Summary</li>
+            }
+
+        </ul>
     
-    </ul>
+ 
 
 
 
