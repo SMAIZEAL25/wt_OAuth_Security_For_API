@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace WebAPI.Controllers
 {
@@ -9,6 +12,13 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public AuthController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [HttpPost]
         public IActionResult Authenticate([FromBody] Credential credential)
         {
@@ -30,7 +40,7 @@ namespace WebAPI.Controllers
 
                 return Ok(new
                 {
-                    access_token = "",
+                    access_token = createToken(claims, expiresAt),
                     expiresAt = expiresAt,
                 });
 
@@ -43,7 +53,20 @@ namespace WebAPI.Controllers
 
         private string createToken(IEnumerable<Claim> claims, DateTime expireAt)
         {
-            // Generate the JWT 
+           var seceretkey = Encoding.ASCII.GetBytes (_configuration.GetValue<string>("SeceretKey"));
+
+            var jwt = new JwtSecurityToken(
+                //issuer: "https://localhost:5001",
+                //audience: "https://localhost:5001",
+                //notAfter: DateTime.UtcNow,
+                claims: claims,
+                expires: expireAt,
+                notBefore: DateTime.UtcNow,
+                signingCredentials: new SigningCredentials(
+                    new SymmetricSecurityKey(seceretkey),
+                    SecurityAlgorithms.HmacSha256Signature));
+                
+            return new JwtSecurityTokenHandler().WriteToken(jwt);
         }
     }
 
