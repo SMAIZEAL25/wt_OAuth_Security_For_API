@@ -1,223 +1,182 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Elite Auto Care - Premium Automotive Services";
+    ViewData["Title"] = "AutoCare Solutions - Home";
 }
 
-<div class="hero-section">
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1621616561336-656d31d56b27?w=1920&auto=format&fit=crop');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1517524008697-84bbeb9b907c?w=1920&auto=format&fit=crop');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1585506942812-e72d4c2fce9c?w=1920&auto=format&fit=crop');"></div>
+    </div>
     <div class="hero-overlay"></div>
-    <div id="dynamicCarDisplay" class="hero-carousel">
-        <!-- Images will be loaded dynamically via JavaScript -->
+    <div class="hero-content text-center">
+        <h1 class="display-3 animate-on-scroll">Welcome to AutoCare Solutions</h1>
+        <p class="lead animate-on-scroll">Your Trusted Partner for Car Wash, Repairs, Imports, and Order Tracking</p>
+        <button class="btn btn-primary btn-lg mt-3 animate-on-scroll" onclick="openOrderPopup()">Place Order</button>
     </div>
-    <div class="hero-content container">
-        <h1 class="hero-title">Elite Automotive Care & Global Import Services</h1>
-        <p class="hero-subtitle">Premium care for premium vehicles - from meticulous detailing to precision engineering</p>
-        <div class="hero-buttons">
-            <a href="#services" class="btn btn-primary btn-lg me-3">Our Services</a>
-            <a href="/Account/Login" class="btn btn-outline-light btn-lg">Client Portal</a>
-        </div>
-    </div>
-</div>
+</section>
 
-<div class="container-fluid features-section py-5" id="services">
+<!-- Services Section -->
+<section id="services" class="services-section py-5">
     <div class="container">
-        <h2 class="text-center mb-5 section-title">Comprehensive Automotive Solutions</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon bg-wash">
-                        <i class="fas fa-car-side"></i>
-                    </div>
-                    <h3>Concierge Detailing</h3>
-                    <p>Our signature wash process uses only the finest products to pamper your luxury vehicle.</p>
-                    <div class="service-gallery mt-3">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Luxury car wash" class="img-fluid rounded service-thumbnail">
-                    </div>
-                    <a href="#" class="feature-link">Schedule Detailing <i class="fas fa-arrow-right"></i></a>
+        <h2 class="text-center mb-5 animate-on-scroll">Our Services</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="service-card text-center animate-on-scroll">
+                    <i class="fas fa-shower fa-3x mb-3"></i>
+                    <h4>Car Wash</h4>
+                    <p>Premium car wash services to make your vehicle sparkle.</p>
+                    <a href="#" class="btn btn-outline-primary">Book a Wash</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon bg-repair">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Master Technician Services</h3>
-                    <p>Factory-trained specialists using OEM parts for your European performance vehicles.</p>
-                    <div class="service-gallery mt-3">
-                        <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e" alt="Car repair" class="img-fluid rounded service-thumbnail">
-                    </div>
-                    <a href="#" class="feature-link">Request Service <i class="fas fa-arrow-right"></i></a>
+            <div class="col-md-3 mb-4">
+                <div class="service-card text-center animate-on-scroll">
+                    <i class="fas fa-tools fa-3x mb-3"></i>
+                    <h4>Car Repairs</h4>
+                    <p>Expert repairs to keep your car running smoothly.</p>
+                    <a href="#" class="btn btn-outline-primary">Schedule a Repair</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <div class="feature-icon bg-import">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Global Vehicle Sourcing</h3>
-                    <p>White-glove import service for rare and premium vehicles from worldwide markets.</p>
-                    <div class="service-gallery mt-3">
-                        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d" alt="Car import" class="img-fluid rounded service-thumbnail">
-                    </div>
-                    <a href="#" class="feature-link">Begin Import <i class="fas fa-arrow-right"></i></a>
+            <div class="col-md-3 mb-4">
+                <div class="service-card text-center animate-on-scroll">
+                    <i class="fas fa-ship fa-3x mb-3"></i>
+                    <h4>Car Imports</h4>
+                    <p>Seamless import services for your dream car.</p>
+                    <a href="#" class="btn btn-outline-primary">Start Importing</a>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="service-card text-center animate-on-scroll">
+                    <i class="fas fa-truck fa-3x mb-3"></i>
+                    <h4>Order Tracking</h4>
+                    <p>Track your order from start to delivery with ease.</p>
+                    <a href="#order-tracking" class="btn btn-outline-primary">Track Now</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="tracking-section py-5">
+<!-- Testimonial Section -->
+<section class="testimonial-section py-5 bg-light">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h2 class="section-title">Real-Time Vehicle Monitoring</h2>
-                <p class="lead">Track your vehicle's status through every stage of our service process.</p>
-                <ul class="tracking-features">
-                    <li><i class="fas fa-check-circle"></i> Live service bay cameras (optional)</li>
-                    <li><i class="fas fa-check-circle"></i> Port-to-door import tracking</li>
-                    <li><i class="fas fa-check-circle"></i> Digital service reports</li>
-                    <li><i class="fas fa-check-circle"></i> Vehicle health analytics</li>
-                </ul>
-                <div class="d-flex align-items-center mt-4">
-                    <a href="/Account/Login" class="btn btn-primary btn-lg me-3">Access Dashboard</a>
-                    <div class="app-badges">
-                        <img src="https://via.placeholder.com/120x40?text=App+Store" alt="Download on App Store" class="img-fluid me-2">
-                        <img src="https://via.placeholder.com/120x40?text=Google+Play" alt="Get it on Google Play" class="img-fluid">
-                    </div>
+        <h2 class="text-center mb-5 animate-on-scroll">What Our Customers Say</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="lead">"Amazing car wash service! My car looks brand new. Highly recommend AutoCare Solutions!"</p>
+                    <h5>- John Doe</h5>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="tracking-demo shadow-lg rounded overflow-hidden">
-                    <div class="device-mockup">
-                        <div class="screen">
-                            <img src="https://via.placeholder.com/600x400?text=Live+Tracking+Dashboard" alt="Order Tracking Dashboard" class="img-fluid">
-                        </div>
-                    </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="lead">"Fast repair work and great import options. The tracking feature is a game-changer!"</p>
+                    <h5>- Jane Smith</h5>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="testimonials-section py-5">
+<!-- Order Tracking Section -->
+<section id="order-tracking" class="order-tracking-section py-5">
     <div class="container">
-        <h2 class="text-center mb-5 section-title">Client Experiences</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="testimonial-card">
-                    <div class="client-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah J." class="img-fluid rounded-circle">
-                    </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"The only service I trust with my Range Rover. Their attention to detail is unmatched."</p>
-                    <div class="testimonial-author">
-                        <strong>Sarah J.</strong>
-                        <span>Since 2018</span>
-                    </div>
+        <h2 class="text-center mb-5 animate-on-scroll">Track Your Order</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 animate-on-scroll">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter your order number" aria-label="Order number">
+                    <button class="btn btn-primary" type="button">Track Order</button>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial-card">
-                    <div class="client-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="img-fluid rounded-circle">
-                    </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Flawless import of my Porsche 911 from Germany. The tracking system kept me informed at every port."</p>
-                    <div class="testimonial-author">
-                        <strong>Michael T.</strong>
-                        <span>Imported 3 vehicles</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial-card">
-                    <div class="client-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David L." class="img-fluid rounded-circle">
-                    </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="testimonial-text">"Their master technicians resolved an issue BMW dealerships couldn't diagnose. Exceptional."</p>
-                    <div class="testimonial-author">
-                        <strong>David L.</strong>
-                        <span>Fleet Manager</span>
-                    </div>
-                </div>
+                <p class="text-center text-muted">Monitor your car wash, repair, or import order in real-time.</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="brands-section py-4 bg-light">
+<!-- Footer -->
+<footer class="footer py-4 bg-dark text-white">
     <div class="container">
-        <div class="brand-carousel">
-            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=BMW" alt="BMW" class="img-fluid"></div>
-            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Mercedes" alt="Mercedes" class="img-fluid"></div>
-            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Range+Rover" alt="Range Rover" class="img-fluid"></div>
-            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Porsche" alt="Porsche" class="img-fluid"></div>
-            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Audi" alt="Audi" class="img-fluid"></div>
-            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Tesla" alt="Tesla" class="img-fluid"></div>
-        </div>
+        <p class="text-center">© 2025 AutoCare Solutions. All rights reserved.</p>
+        <p class="text-center">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </p>
+        <p class="text-center">Contact us: <a href="mailto:support@autocaresolutions.com" class="text-white">support@autocaresolutions.com</a> | +1-800-555-1234</p>
+    </div>
+</footer>
+
+<!-- Order Popup -->
+<div id="order-popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closeOrderPopup()">×</span>
+        <h3 class="text-center mb-4">Place Your Order</h3>
+        <form id="order-form">
+            <div class="mb-3">
+                <label for="order-name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="order-name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="order-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="order-email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="order-service" class="form-label">Service</label>
+                <select class="form-select" id="order-service" required>
+                    <option value="">Select a service</option>
+                    <option value="car-wash">Car Wash</option>
+                    <option value="car-repair">Car Repair</option>
+                    <option value="car-import">Car Import</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Order</button>
+        </form>
     </div>
 </div>
 
 @section Styles {
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a3e72; /* Deep professional blue */
-            --secondary: #c19a6b; /* Luxury gold */
-            --light: #f8f9fa;
-            --dark: #212529;
-            --wash: #3498db; /* Refresh blue */
-            --repair: #6c757d; /* Professional gray */
-            --import: #28a745; /* Success green */
-            --text-dark: #343a40;
-            --text-light: #6c757d;
+            --primary-color: #ff6d00; /* Vibrant orange */
+            --secondary-color: #1976d2; /* Deep blue */
+            --light-color: #f5f7fa;
+            --dark-color: #212121;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            min-height: 100vh;
         }
 
+        /* Hero Section */
         .hero-section {
             position: relative;
-            height: 90vh;
-            min-height: 600px;
-            overflow: hidden;
-            color: white;
+            height: 100vh;
             display: flex;
             align-items: center;
-            text-align: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
 
-        .hero-overlay {
+        .hero-slider {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(26, 62, 114, 0.85) 0%, rgba(33, 37, 41, 0.9) 100%);
-            z-index: 1;
+            margin: 0;
+            padding: 0;
         }
 
-        .hero-carousel {
+        .hero-slide {
             position: absolute;
             top: 0;
             left: 0;
@@ -225,314 +184,201 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            transition: background-image 1.5s ease-in-out;
+            opacity: 0;
+            transition: opacity 1s ease;
+            margin: 0;
+            padding: 0;
+        }
+
+            .hero-slide.active {
+                opacity: 1;
+            }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            margin: 0;
+            padding: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .hero-title {
-            font-size: 3.2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .section-title {
-            font-weight: 600;
-            color: var(--primary);
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-
-            .section-title:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80px;
-                height: 3px;
-                background: var(--secondary);
-            }
-
-        .feature-card {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            height: 100%;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-
-            .feature-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
             color: white;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .bg-wash {
-            background: var(--wash);
-        }
-
-        .bg-repair {
-            background: var(--repair);
-        }
-
-        .bg-import {
-            background: var(--import);
-        }
-
-        .feature-link {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            transition: all 0.2s ease;
-        }
-
-            .feature-link:hover {
-                color: var(--secondary);
-                transform: translateX(5px);
-            }
-
-        .service-thumbnail {
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-            .service-thumbnail:hover {
-                transform: scale(1.03);
-            }
-
-        .tracking-section {
-            background-color: #f8fafc;
-            background-image: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
-        }
-
-        .tracking-features {
-            list-style: none;
+            margin: 0;
             padding: 0;
-            margin: 25px 0;
         }
 
-            .tracking-features li {
-                margin-bottom: 12px;
-                font-size: 1.1rem;
-                padding-left: 30px;
-                position: relative;
+            .hero-content h1 {
+                font-weight: 700;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             }
 
-            .tracking-features i {
-                color: var(--import);
-                position: absolute;
-                left: 0;
-                top: 3px;
-            }
-
-        .device-mockup {
-            position: relative;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-            .device-mockup .screen {
-                position: relative;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            }
-
-        .testimonials-section {
-            background: var(--primary);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 30px;
-            height: 100%;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-            .testimonial-card:hover {
-                transform: translateY(-5px);
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-        .client-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 15px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-        }
-
-            .client-avatar img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-        .testimonial-rating {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            padding: 0 10px;
-        }
-
-            .testimonial-text:before,
-            .testimonial-text:after {
-                content: '"';
-                font-size: 2rem;
-                color: var(--secondary);
-                opacity: 0.3;
-                position: absolute;
-            }
-
-            .testimonial-text:before {
-                top: -15px;
-                left: -5px;
-            }
-
-            .testimonial-text:after {
-                bottom: -25px;
-                right: -5px;
-            }
-
-        .testimonial-author span {
-            display: block;
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-top: 3px;
-        }
-
-        .brands-section {
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .brand-carousel {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .brand-item {
-            opacity: 0.6;
-            transition: all 0.3s ease;
-            filter: grayscale(100%);
-        }
-
-            .brand-item:hover {
-                opacity: 1;
-                filter: grayscale(0%);
+            .hero-content p {
+                font-size: 1.2rem;
+                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
             }
 
         .btn-primary {
-            background-color: var(--primary);
+            background-color: var(--primary-color);
             border: none;
             padding: 12px 30px;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            border-radius: 6px;
             transition: all 0.3s ease;
         }
 
             .btn-primary:hover {
-                background-color: #122a54;
+                background-color: #e65100;
                 transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(26, 62, 114, 0.3);
+                box-shadow: 0 5px 15px rgba(255, 109, 0, 0.4);
             }
 
-        .btn-outline-light {
-            border-width: 2px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            border-radius: 6px;
+        /* Services Section */
+        .services-section {
+            background-color: var(--light-color);
+            margin: 0;
+            padding: 0 0 2rem 0;
+        }
+
+        .container {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .service-card i {
+                color: var(--secondary-color);
+            }
+
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
             transition: all 0.3s ease;
         }
 
-            .btn-outline-light:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-                transform: translateY(-2px);
+            .btn-outline-primary:hover {
+                background-color: var(--primary-color);
+                color: white;
             }
 
-        @@media (max-width: 992px) {
-            .hero-title {
+        /* Testimonial Section */
+        .testimonial-section {
+            margin: 0;
+            padding: 0 0 2rem 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        /* Order Tracking Section */
+        .order-tracking-section {
+            margin: 0;
+            padding: 0 0 2rem 0;
+        }
+
+            .order-tracking-section .form-control {
+                height: 50px;
+                border-radius: 8px 0 0 8px;
+            }
+
+            .order-tracking-section .btn-primary {
+                border-radius: 0 8px 8px 0;
+            }
+
+        /* Footer */
+        .footer {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        .popup .form-control, .popup .form-select {
+            height: 50px;
+            border-radius: 8px;
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+            .animate-on-scroll.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        @@media (max-width: 768px) {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-subtitle {
-                font-size: 1.2rem;
+            .hero-content p {
+                font-size: 1rem;
             }
 
-            .hero-buttons .btn {
-                display: block;
-                width: 100%;
-                margin-bottom: 15px;
+            .service-card {
+                padding: 1.5rem;
             }
 
-                .hero-buttons .btn:last-child {
-                    margin-bottom: 0;
-                }
-        }
-
-        @@media (max-width: 768px) {
-            .hero-section {
-                height: auto;
-                min-height: 500px;
-                padding: 100px 0;
+            .popup-content {
+                width: 95%;
             }
-
-            .tracking-section .row > div {
-                margin-bottom: 30px;
-            }
-
-                .tracking-section .row > div:last-child {
-                    margin-bottom: 0;
-                }
         }
     </style>
 }
@@ -540,82 +386,57 @@
 @section Scripts {
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        // Dynamic car image rotation
-        const carImages = [
-            'https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // BMW
-            'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Mercedes
-            'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Range Rover
-            'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Porsche
-            'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Audi
-            'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' // Tesla
-        ];
+        // Hero Slider
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
 
-        const carousel = document.getElementById('dynamicCarDisplay');
-        let currentImageIndex = 0;
-
-        function changeBackgroundImage() {
-            currentImageIndex = (currentImageIndex + 1) % carImages.length;
-            carousel.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+        function changeSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
         }
 
-        // Set initial image
-        carousel.style.backgroundImage = `url('${carImages[0]}')`;
-        carousel.style.backgroundSize = 'cover';
-        carousel.style.backgroundPosition = 'center';
-        carousel.style.width = '100%';
-        carousel.style.height = '100%';
-        carousel.style.position = 'absolute';
-        carousel.style.top = '0';
-        carousel.style.left = '0';
+        // Ensure the first slide is visible on load
+        slides[currentSlide].classList.add('active');
+        setInterval(changeSlide, 5000);
 
-        // Change image every 5 seconds
-        setInterval(changeBackgroundImage, 5000);
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animate elements when they come into view
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .section-title, .testimonial-card');
-
+        // Scroll Animation
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
             elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
 
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('visible');
                 }
             });
-        };
+        }
 
-        // Set initial state for animation
-        window.addEventListener('load', () => {
-            const elements = document.querySelectorAll('.feature-card, .section-title, .testimonial-card');
-            elements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            });
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
 
-            animateOnScroll();
-        });
+        // Popup Management
+        function openOrderPopup() {
+            document.getElementById('order-popup').style.display = 'flex';
+        }
 
-        window.addEventListener('scroll', animateOnScroll);
+        function closeOrderPopup() {
+            document.getElementById('order-popup').style.display = 'none';
+        }
 
-        // Service thumbnail zoom effect
-        document.querySelectorAll('.service-thumbnail').forEach(thumbnail => {
-            thumbnail.addEventListener('click', function() {
-                // In a real implementation, this would open a modal or lightbox
-                console.log('Opening gallery for:', this.alt);
-            });
+        // Form Submission (Mock for now)
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('order-name').value;
+            const email = document.getElementById('order-email').value;
+            const service = document.getElementById('order-service').value;
+            if (name && email && service) {
+                alert(`Order placed for ${service} by ${name}!`);
+                closeOrderPopup();
+                this.reset();
+            }
         });
     </script>
 }
