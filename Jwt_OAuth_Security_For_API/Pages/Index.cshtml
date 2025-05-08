@@ -1,10 +1,621 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Elite Auto Care - Premium Automotive Services";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div id="dynamicCarDisplay" class="hero-carousel">
+        <!-- Images will be loaded dynamically via JavaScript -->
+    </div>
+    <div class="hero-content container">
+        <h1 class="hero-title">Elite Automotive Care & Global Import Services</h1>
+        <p class="hero-subtitle">Premium care for premium vehicles - from meticulous detailing to precision engineering</p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary btn-lg me-3">Our Services</a>
+            <a href="/Account/Login" class="btn btn-outline-light btn-lg">Client Portal</a>
+        </div>
+    </div>
 </div>
+
+<div class="container-fluid features-section py-5" id="services">
+    <div class="container">
+        <h2 class="text-center mb-5 section-title">Comprehensive Automotive Solutions</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon bg-wash">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Concierge Detailing</h3>
+                    <p>Our signature wash process uses only the finest products to pamper your luxury vehicle.</p>
+                    <div class="service-gallery mt-3">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="Luxury car wash" class="img-fluid rounded service-thumbnail">
+                    </div>
+                    <a href="#" class="feature-link">Schedule Detailing <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon bg-repair">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Master Technician Services</h3>
+                    <p>Factory-trained specialists using OEM parts for your European performance vehicles.</p>
+                    <div class="service-gallery mt-3">
+                        <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e" alt="Car repair" class="img-fluid rounded service-thumbnail">
+                    </div>
+                    <a href="#" class="feature-link">Request Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon bg-import">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Global Vehicle Sourcing</h3>
+                    <p>White-glove import service for rare and premium vehicles from worldwide markets.</p>
+                    <div class="service-gallery mt-3">
+                        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d" alt="Car import" class="img-fluid rounded service-thumbnail">
+                    </div>
+                    <a href="#" class="feature-link">Begin Import <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tracking-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title">Real-Time Vehicle Monitoring</h2>
+                <p class="lead">Track your vehicle's status through every stage of our service process.</p>
+                <ul class="tracking-features">
+                    <li><i class="fas fa-check-circle"></i> Live service bay cameras (optional)</li>
+                    <li><i class="fas fa-check-circle"></i> Port-to-door import tracking</li>
+                    <li><i class="fas fa-check-circle"></i> Digital service reports</li>
+                    <li><i class="fas fa-check-circle"></i> Vehicle health analytics</li>
+                </ul>
+                <div class="d-flex align-items-center mt-4">
+                    <a href="/Account/Login" class="btn btn-primary btn-lg me-3">Access Dashboard</a>
+                    <div class="app-badges">
+                        <img src="https://via.placeholder.com/120x40?text=App+Store" alt="Download on App Store" class="img-fluid me-2">
+                        <img src="https://via.placeholder.com/120x40?text=Google+Play" alt="Get it on Google Play" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="tracking-demo shadow-lg rounded overflow-hidden">
+                    <div class="device-mockup">
+                        <div class="screen">
+                            <img src="https://via.placeholder.com/600x400?text=Live+Tracking+Dashboard" alt="Order Tracking Dashboard" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 section-title">Client Experiences</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah J." class="img-fluid rounded-circle">
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The only service I trust with my Range Rover. Their attention to detail is unmatched."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah J.</strong>
+                        <span>Since 2018</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="img-fluid rounded-circle">
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Flawless import of my Porsche 911 from Germany. The tracking system kept me informed at every port."</p>
+                    <div class="testimonial-author">
+                        <strong>Michael T.</strong>
+                        <span>Imported 3 vehicles</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David L." class="img-fluid rounded-circle">
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"Their master technicians resolved an issue BMW dealerships couldn't diagnose. Exceptional."</p>
+                    <div class="testimonial-author">
+                        <strong>David L.</strong>
+                        <span>Fleet Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="brands-section py-4 bg-light">
+    <div class="container">
+        <div class="brand-carousel">
+            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=BMW" alt="BMW" class="img-fluid"></div>
+            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Mercedes" alt="Mercedes" class="img-fluid"></div>
+            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Range+Rover" alt="Range Rover" class="img-fluid"></div>
+            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Porsche" alt="Porsche" class="img-fluid"></div>
+            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Audi" alt="Audi" class="img-fluid"></div>
+            <div class="brand-item"><img src="https://via.placeholder.com/150x60?text=Tesla" alt="Tesla" class="img-fluid"></div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        :root {
+            --primary: #1a3e72; /* Deep professional blue */
+            --secondary: #c19a6b; /* Luxury gold */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --wash: #3498db; /* Refresh blue */
+            --repair: #6c757d; /* Professional gray */
+            --import: #28a745; /* Success green */
+            --text-dark: #343a40;
+            --text-light: #6c757d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: var(--text-dark);
+        }
+
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 62, 114, 0.85) 0%, rgba(33, 37, 41, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1.5s ease-in-out;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background: var(--secondary);
+            }
+
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-wash {
+            background: var(--wash);
+        }
+
+        .bg-repair {
+            background: var(--repair);
+        }
+
+        .bg-import {
+            background: var(--import);
+        }
+
+        .feature-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+        }
+
+            .feature-link:hover {
+                color: var(--secondary);
+                transform: translateX(5px);
+            }
+
+        .service-thumbnail {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+            .service-thumbnail:hover {
+                transform: scale(1.03);
+            }
+
+        .tracking-section {
+            background-color: #f8fafc;
+            background-image: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .tracking-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+            .tracking-features li {
+                margin-bottom: 12px;
+                font-size: 1.1rem;
+                padding-left: 30px;
+                position: relative;
+            }
+
+            .tracking-features i {
+                color: var(--import);
+                position: absolute;
+                left: 0;
+                top: 3px;
+            }
+
+        .device-mockup {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+            .device-mockup .screen {
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+
+        .testimonials-section {
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        .client-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+            .client-avatar img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .testimonial-rating {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding: 0 10px;
+        }
+
+            .testimonial-text:before,
+            .testimonial-text:after {
+                content: '"';
+                font-size: 2rem;
+                color: var(--secondary);
+                opacity: 0.3;
+                position: absolute;
+            }
+
+            .testimonial-text:before {
+                top: -15px;
+                left: -5px;
+            }
+
+            .testimonial-text:after {
+                bottom: -25px;
+                right: -5px;
+            }
+
+        .testimonial-author span {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 3px;
+        }
+
+        .brands-section {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-carousel {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .brand-item {
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+            .brand-item:hover {
+                opacity: 1;
+                filter: grayscale(0%);
+            }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #122a54;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(26, 62, 114, 0.3);
+            }
+
+        .btn-outline-light {
+            border-width: 2px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-outline-light:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                transform: translateY(-2px);
+            }
+
+        @@media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+                .hero-buttons .btn:last-child {
+                    margin-bottom: 0;
+                }
+        }
+
+        @@media (max-width: 768px) {
+            .hero-section {
+                height: auto;
+                min-height: 500px;
+                padding: 100px 0;
+            }
+
+            .tracking-section .row > div {
+                margin-bottom: 30px;
+            }
+
+                .tracking-section .row > div:last-child {
+                    margin-bottom: 0;
+                }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Dynamic car image rotation
+        const carImages = [
+            'https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // BMW
+            'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Mercedes
+            'https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Range Rover
+            'https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Porsche
+            'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', // Audi
+            'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' // Tesla
+        ];
+
+        const carousel = document.getElementById('dynamicCarDisplay');
+        let currentImageIndex = 0;
+
+        function changeBackgroundImage() {
+            currentImageIndex = (currentImageIndex + 1) % carImages.length;
+            carousel.style.backgroundImage = `url('${carImages[currentImageIndex]}')`;
+        }
+
+        // Set initial image
+        carousel.style.backgroundImage = `url('${carImages[0]}')`;
+        carousel.style.backgroundSize = 'cover';
+        carousel.style.backgroundPosition = 'center';
+        carousel.style.width = '100%';
+        carousel.style.height = '100%';
+        carousel.style.position = 'absolute';
+        carousel.style.top = '0';
+        carousel.style.left = '0';
+
+        // Change image every 5 seconds
+        setInterval(changeBackgroundImage, 5000);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .section-title, .testimonial-card');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animation
+        window.addEventListener('load', () => {
+            const elements = document.querySelectorAll('.feature-card, .section-title, .testimonial-card');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            animateOnScroll();
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Service thumbnail zoom effect
+        document.querySelectorAll('.service-thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                // In a real implementation, this would open a modal or lightbox
+                console.log('Opening gallery for:', this.alt);
+            });
+        });
+    </script>
+}

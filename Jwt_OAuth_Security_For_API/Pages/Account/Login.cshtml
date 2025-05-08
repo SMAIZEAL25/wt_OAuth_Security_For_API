@@ -1,55 +1,281 @@
 ﻿@page
 @model Jwt_OAuth_Security_For_API.Pages.Account.LoginModel
 @{
+    ViewData["Title"] = "Login or Signup";
 }
 
-<div class=" conatiner border" style ="padding:20px">
-    <form method="post">
-
-        <div class=" text-danger" asp-validation-summary="All">
+<div class="welcome-container">
+    <div class="welcome-content">
+        <div class="text-center mb-5">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead text-muted">Login or create a new account</p>
         </div>
 
-
-        <div class=" mb-3 row">
-            <div class = "col-2">
-                <label asp-for="Credential.UserName"></label>
+        <div class="login-box shadow-lg rounded">
+            <!-- Toggle Buttons -->
+            <div class="toggle-buttons text-center mb-4">
+                <button class="toggle-btn active" onclick="showForm('login')">Login</button>
+                <button class="toggle-btn" onclick="showForm('signup')">Signup</button>
             </div>
-            <div class="col-5">
-                <input type="text" asp-for="Credential.UserName" class="form-control" />
-                <span class="text-danger" asp-validation-for="Credential.UserName"> </span>
+
+            <!-- Login Form -->
+            <div id="login-form" class="form-container">
+                <form method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="mb-4">
+                        <label asp-for="Credential.UserName" class="form-label"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <input type="text" asp-for="Credential.UserName" class="form-control" placeholder="Enter your username" />
+                        </div>
+                        <span class="text-danger small" asp-validation-for="Credential.UserName"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Credential.Password" class="form-label"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <input type="password" asp-for="Credential.Password" class="form-control" placeholder="Enter your password" />
+                        </div>
+                        <span class="text-danger small" asp-validation-for="Credential.Password"></span>
+                    </div>
+
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" asp-for="Credential.RememberMe" />
+                        <label class="form-check-label" asp-for="Credential.RememberMe"></label>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                        </button>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <a asp-page="/Account/ForgotPassword" class="text-decoration-none">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="form-container" style="display: none;">
+                <form method="post" asp-page="/Account/Register">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <input type="text" name="Register.Username" class="form-control" placeholder="Enter your username" />
+                        </div>
+                        <span class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <input type="email" name="Register.Email" class="form-control" placeholder="Enter your email" />
+                        </div>
+                        <span class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <input type="password" name="Register.Password" class="form-control" placeholder="Enter your password" />
+                        </div>
+                        <span class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <input type="password" name="Register.ConfirmPassword" class="form-control" placeholder="Confirm your password" />
+                        </div>
+                        <span class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-user-plus me-2"></i>Signup
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
-        
-
-
-        <div class=" mb-3 row">
-            <div class="col-2">
-                <label asp-for="Credential.Password"></label>
-            </div>
-            <div class="col-5">
-                <input type="password" asp-for="Credential.Password" class="form-control" />
-                <span class="text-danger" asp-validation-for="Credential.Password"> </span>
-            </div>
-        </div>
-
-
-        <div class=" mb-3 row form-check">
-            <div class="col-2">
-                <input type="checkbox" class="form-check-input" asp-for="Credential.RememberMe" />
-                <label class="form-check-label" asp-for="Credential.RememberMe"></label>
-            </div>
-            <div class="col-5">
-            </div>
-
-       
-        <div class=" mb-3 row">
-            <div class="col-2">
-               <input  type="submit" class="btn btn-primary" value="Login"/>
-            </div>
-            <div class="col-5">
-                
-            </div>
-        </div>
-
-    </form>
+    </div>
 </div>
+
+@section Styles {
+    <style>
+        :root {
+            --primary-color: #4a6bdf;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        .welcome-container {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            padding: 2rem;
+        }
+
+        .welcome-content {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .login-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control, .input-group-text {
+            height: 50px;
+        }
+
+        .input-group-text {
+            background-color: var(--light-color);
+            border-right: none;
+        }
+
+        .form-control {
+            border-left: none;
+        }
+
+            .form-control:focus {
+                box-shadow: none;
+                border-color: #ced4da;
+            }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #3a5bd9;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(74, 107, 223, 0.3);
+            }
+
+        .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            transition: all 0.2s ease;
+        }
+
+            a:hover {
+                color: #3a5bd9;
+                text-decoration: underline;
+            }
+
+        .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .toggle-btn {
+            background: #e9ecef;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+            .toggle-btn.active, .toggle-btn:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+
+        .form-container {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+            .form-container[style*="display: none"] {
+                opacity: 0;
+                transform: translateY(10px);
+                position: absolute;
+                width: 100%;
+            }
+
+            .form-container:not([style*="display: none"]) {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        @@media (max-width: 576px) {
+            .welcome-container
+
+        {
+            padding: 1rem;
+        }
+
+        .login-box {
+            padding: 1.5rem;
+        }
+
+        }
+    </style>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        function showForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const loginBtn = document.querySelector('button[onclick="showForm(\'login\')"]');
+            const signupBtn = document.querySelector('button[onclick="showForm(\'signup\')"]');
+
+            if (formType === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                loginBtn.classList.add('active');
+                signupBtn.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                loginBtn.classList.remove('active');
+                signupBtn.classList.add('active');
+            }
+        }
+    </script>
+}
