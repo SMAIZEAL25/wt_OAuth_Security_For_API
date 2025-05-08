@@ -16,10 +16,10 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
 // How to ad policy 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("AdminOnly", policy => policy.RequireClaim("Ädmin"));
+    options.AddPolicy("AdminOnly", policy => policy.RequireClaim("admin"));
     options.AddPolicy("MustBelongToHRDepartment", policy => policy.RequireClaim("Department", "HR"));
     options.AddPolicy("HRManagerOnly", policy => policy
-    .RequireClaim("Department", "HR") // for the Policy the Authorixation middle ware require this two claims to be satisfied 
+    .RequireClaim("Department", "HR") // for the Policy the Authorization middle ware require this two claims to be satisfied 
     .RequireClaim("Manager").Requirements.Add(new HRManagerProbationRequirement(3))); // and this too 
     
 
@@ -31,6 +31,13 @@ builder.Services.AddHttpClient("OurWebAPI", client =>
 {
     client.BaseAddress = new Uri("https://localhost:7263/");
    
+});
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.IdleTimeout = TimeSpan.FromSeconds(20);
+    options.Cookie.IsEssential = true; // make the session cookie essential
 });
 
 var app = builder.Build();
@@ -52,6 +59,8 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapRazorPages();
 
