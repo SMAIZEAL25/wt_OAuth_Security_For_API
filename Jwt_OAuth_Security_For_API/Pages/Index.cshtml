@@ -97,21 +97,21 @@
 
 <!-- Footer -->
 <footer class="footer py-4 bg-dark text-white">
-    <div class="container">
-        <p class="text-center">© 2025 AutoCare Solutions. All rights reserved.</p>
-        <p class="text-center">
+    <div class="container text-center">
+        <p>© 2025 AutoCare Solutions. All rights reserved.</p>
+        <p>
             <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
             <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
         </p>
-        <p class="text-center">Contact us: <a href="mailto:support@autocaresolutions.com" class="text-white">support@autocaresolutions.com</a> | +1-800-555-1234</p>
+        <p>Contact us: <a href="mailto:support@autocaresolutions.com" class="text-white">support@autocaresolutions.com</a> | +1-800-555-1234</p>
     </div>
 </footer>
 
 <!-- Order Popup -->
 <div id="order-popup" class="popup">
     <div class="popup-content">
-        <span class="close-btn" onclick="closeOrderPopup()">×</span>
+        <span class="close-btn" onclick="closeOrderPopup()">&times;</span>
         <h3 class="text-center mb-4">Place Your Order</h3>
         <form id="order-form">
             <div class="mb-3">
@@ -148,10 +148,8 @@
 
         body {
             margin: 0;
-            padding: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #ffffff;
-            min-height: 100vh;
         }
 
         /* Hero Section */
@@ -162,8 +160,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin: 0;
-            padding: 0;
         }
 
         .hero-slider {
@@ -172,8 +168,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            margin: 0;
-            padding: 0;
         }
 
         .hero-slide {
@@ -186,13 +180,11 @@
             background-position: center;
             opacity: 0;
             transition: opacity 1s ease;
-            margin: 0;
-            padding: 0;
         }
 
-            .hero-slide.active {
-                opacity: 1;
-            }
+        .hero-slide.active {
+            opacity: 1;
+        }
 
         .hero-overlay {
             position: absolute;
@@ -202,27 +194,23 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
-            margin: 0;
-            padding: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
             color: white;
-            margin: 0;
-            padding: 0;
         }
 
-            .hero-content h1 {
-                font-weight: 700;
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            }
+        .hero-content h1 {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
 
-            .hero-content p {
-                font-size: 1.2rem;
-                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-            }
+        .hero-content p {
+            font-size: 1.2rem;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+        }
 
         .btn-primary {
             background-color: var(--primary-color);
@@ -232,23 +220,15 @@
             transition: all 0.3s ease;
         }
 
-            .btn-primary:hover {
-                background-color: #e65100;
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(255, 109, 0, 0.4);
-            }
+        .btn-primary:hover {
+            background-color: #e65100;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 109, 0, 0.4);
+        }
 
         /* Services Section */
         .services-section {
             background-color: var(--light-color);
-            margin: 0;
-            padding: 0 0 2rem 0;
-        }
-
-        .container {
-            margin: 0;
-            padding: 0;
-            width: 100%;
         }
 
         .service-card {
@@ -259,14 +239,14 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-            .service-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-            .service-card i {
-                color: var(--secondary-color);
-            }
+        .service-card i {
+            color: var(--secondary-color);
+        }
 
         .btn-outline-primary {
             border-color: var(--primary-color);
@@ -274,17 +254,12 @@
             transition: all 0.3s ease;
         }
 
-            .btn-outline-primary:hover {
-                background-color: var(--primary-color);
-                color: white;
-            }
-
-        /* Testimonial Section */
-        .testimonial-section {
-            margin: 0;
-            padding: 0 0 2rem 0;
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
         }
 
+        /* Testimonial Section */
         .testimonial-card {
             background: white;
             padding: 2rem;
@@ -294,24 +269,13 @@
         }
 
         /* Order Tracking Section */
-        .order-tracking-section {
-            margin: 0;
-            padding: 0 0 2rem 0;
+        .order-tracking-section .form-control {
+            height: 50px;
+            border-radius: 8px 0 0 8px;
         }
 
-            .order-tracking-section .form-control {
-                height: 50px;
-                border-radius: 8px 0 0 8px;
-            }
-
-            .order-tracking-section .btn-primary {
-                border-radius: 0 8px 8px 0;
-            }
-
-        /* Footer */
-        .footer {
-            margin: 0;
-            padding: 0;
+        .order-tracking-section .btn-primary {
+            border-radius: 0 8px 8px 0;
         }
 
         /* Popup */
@@ -358,10 +322,10 @@
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
-            .animate-on-scroll.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         @@media (max-width: 768px) {
             .hero-content h1 {
@@ -396,8 +360,6 @@
             slides[currentSlide].classList.add('active');
         }
 
-        // Ensure the first slide is visible on load
-        slides[currentSlide].classList.add('active');
         setInterval(changeSlide, 5000);
 
         // Scroll Animation
